@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.03.02
+// @version      2026.03.02.1
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -20,11 +20,12 @@ var AGGRESSION = 6;
 
 // Adding a new site
 //sites.push(new SiteClass('domain', true/false, ['class, id, data-name, element.attribute.value, element.text']) )
-//sites.push(new SiteClass('', true, ['']) )
+//sites.push(new SiteClass('', false, ['']) )
 
 const sites = [];
 
 function main (log, level = 0) {
+    sites.push(new SiteClass('avday.vip', false, ['video-plan','https://avday.vip/activity']) )
     sites.push(new SiteClass('voyeurhit', false, ['storage.multstorage.com','footer','seo-text','seo-title','fh-wall','trialhd','btn__label','hardlink-btn','nopop','video-tube-friends','video-page__comments','outstream','header__cookie','header__popup','header__network','header__userpanel']) )
     sites.push(new SiteClass('abxxx', false, ['thumb has-video','show-more-link','thumbs-models','poloptrex','video-page-ad','ad__title','gfpl-wrapper','vpaid-frame','wrapper banner',]) )
     sites.push(new SiteClass('fapvid', false, ['w r-t desk type-5 show','desktop-banner','iframe-ht-native-under-player','block-videos-middle','Other free porn sites','tradeindex','uk-visible@l mx-auto mb-5','widget-container','wbar']) )
