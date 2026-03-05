@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.03.05
+// @version      2026.03.02.2
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -25,6 +25,7 @@ const sites = [];
 
 function main (log, level = 0) {
     //sites.push(new SiteClass('domain', false, ['attrib']) )
+    sites.push(new SiteClass('picazor.com', false, ['fixed top-0 left-0 right-0 z-[60] border-b dark:border-slate-700','modal-container justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-[10002] bg-neutral-800/70 w-full h-full']) )
     sites.push(new SiteClass('xnxx.health', false, ['network']) )
     sites.push(new SiteClass('avday.vip', false, ['video-plan','https://avday.vip/activity']) )
     sites.push(new SiteClass('voyeurhit', false, ['storage.multstorage.com','footer','seo-text','seo-title','fh-wall','trialhd','btn__label','hardlink-btn','nopop','video-tube-friends','video-page__comments','outstream','header__cookie','header__popup','header__network','header__userpanel']) )
