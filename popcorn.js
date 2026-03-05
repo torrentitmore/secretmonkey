@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.03.02.1
+// @version      2026.03.05
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -20,11 +20,12 @@ var AGGRESSION = 6;
 
 // Adding a new site
 //sites.push(new SiteClass('domain', true/false, ['class, id, data-name, element.attribute.value, element.text']) )
-//sites.push(new SiteClass('', false, ['']) )
 
 const sites = [];
 
 function main (log, level = 0) {
+    //sites.push(new SiteClass('domain', false, ['attrib']) )
+    sites.push(new SiteClass('xnxx.health', false, ['network']) )
     sites.push(new SiteClass('avday.vip', false, ['video-plan','https://avday.vip/activity']) )
     sites.push(new SiteClass('voyeurhit', false, ['storage.multstorage.com','footer','seo-text','seo-title','fh-wall','trialhd','btn__label','hardlink-btn','nopop','video-tube-friends','video-page__comments','outstream','header__cookie','header__popup','header__network','header__userpanel']) )
     sites.push(new SiteClass('abxxx', false, ['thumb has-video','show-more-link','thumbs-models','poloptrex','video-page-ad','ad__title','gfpl-wrapper','vpaid-frame','wrapper banner',]) )
