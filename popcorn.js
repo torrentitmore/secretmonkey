@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.03.02.3
+// @version      2026.03.10
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -12,7 +12,7 @@
 
 
 var DEBUG = 1;
-var AGGRESSION = 6;
+var AGGRESSION = 13;
 
 
 
@@ -43,7 +43,6 @@ function main (log, level = 0) {
 
 
 
-
 class SiteClass {
     constructor(domain = 'generic', strict_domain_match = true, fuzzy = []) {
         this.domain = domain;
@@ -63,17 +62,22 @@ class SiteClass {
             for (var attrItem in attrList) {
 
                 var attr = attrList[attrItem];
+                var name = attr.name;
                 var value = attr.value;
-                debug(`[tampermonkey] :: hide_fuzzy :: attributesContainsString :: value :: ${tag.attributes} :: ${value}`, 4);
+                debug(`[tampermonkey] :: hide_fuzzy :: attributesContainsString :: value :: ${tag.attributes} :: ${name} :: ${value}`, 4);
 
                 if (typeof(value) === undefined) {continue;}
 
                 if (value.includes(string)) {
-                    debug(`[tampermonkey] :: hide_fuzzy :: attributesContainsString :: FOUND :: ${string} :: ${value}`, 3);
-                    return true;}}
+                    debug(`[tampermonkey] :: hide_fuzzy :: attributesContainsString :: FOUND :: ${string} :: ${name} :: ${value}`, 3);
+                    return true;}
+
+                if (name.includes(string)) {
+                    debug(`[tampermonkey] :: hide_fuzzy :: attributesContainsString :: FOUND :: ${string} :: ${name} :: ${value}`, 3);
+                    return true;}
+            }
 
             return false;}
-
 
         function textContainsString(tag, string) {
             // check the element.text if it contains the string //
@@ -274,6 +278,14 @@ function debug (log, level = 0) {
             clearInterval(intervalId);
             debug(`[tampermonkey] :: done`)
         }, 8000);
+    }
+
+    if (AGGRESSION === 13) {
+        setTimeout(() => {
+            hideAllSites(sites).catch(console.error);
+            debug(`[tampermonkey] :: done`)
+        }, 800);
+
     }
 
 })();
