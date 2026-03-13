@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.03.13
+// @version      2026.03.14
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -24,7 +24,10 @@ var AGGRESSION = 13;
 const sites = [];
 
 function main (log, level = 0) {
-    //sites.push(new SiteClass('domain', false, ['attrib']) )
+    sites.push(new SiteClass('domainxxx', false, []) )
+    sites.push(new SiteClass('spankbang.com', false, ['all_comments','embed_box','Embed this porn video']) )
+    sites.push(new SiteClass('babestube.com', false, ['commentView']) )
+    sites.push(new SiteClass('realpornclip.com', false, ['main-sidebar']) )
     sites.push(new SiteClass('anacams.com', false, ['modalewelcome']) )
     sites.push(new SiteClass('picazor.com', false, ['fixed top-0 left-0 right-0 z-[60] border-b dark:border-slate-700','modal-container justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-[10002] bg-neutral-800/70 w-full h-full']) )
     sites.push(new SiteClass('xnxx.health', false, ['network']) )
@@ -35,7 +38,7 @@ function main (log, level = 0) {
     sites.push(new SiteClass('liveporn.tv', false, ['Footer-footer-0-2-155 Footer-footer-d0-0-2-161','Footer-footer-0-2-124 Footer-footer-d0-0-2-130','HeaderWithSearch-buttonsWrapper-0-2-236 HeaderWithSearch-rightSideWrapper-0-2-235']) )
     sites.push(new SiteClass('pornhub.com', false, ['pb_top_bar','pb_iframe','resume_button','pb_top_bar','pb_block','mgp_overlayText','IFRAME','headerMenuContainer','extraRelatedVid','globalCookieBanner','sniperModeEngaged alpha','footerContentWrapper','networkBarWrapper','userActions','uploadBtnContent','empty_uBlock','xqrs8r xqrs8u hd clear wide','sideAds','hd clear wide','mgp_overlayText mgp_link mgp_noBorder mgp_closable','mgp_adRollTitle','js_promoItem','emptyBlockSpace','jw2mlosg1f','qkzg4lt7p9gykjuquf','mod1f','h96nxmahdgr72m210uf','wtpjxy9iq25y5rgczrkbf','ngbfuussnwf','hd clear original','sectionWrapper topTrendingPornstars','under-player-comments','headerUpgradePremiumBtn','photoComments','profileStream','customSkin']) )
     sites.push(new SiteClass('pornlib.com', false, ['lc-block','aside_content','lcams2','spot_video_livecams2']) )
-    sites.push(new SiteClass('redgifs.com', false, ['OnlyFansCreatorsSidebar','cky-consent-bar','adSideBar','Button Button_tertiary Button_s aTab']) )
+    sites.push(new SiteClass('redgifs.com', false, ['legalLinks','OnlyFansCreatorsSidebar','cky-consent-bar','adSideBar','Button Button_tertiary Button_s aTab']) )
     sites.push(new SiteClass('xhamster.com', false, ['promo-messages-unpin','video-comments','lv-red','xplayer-ads-block__footer','tv-inner-container','ts-init','video-share-button','report-button','banner-underplayer','promo-messages-wrapper','sponsor-banner','top-menu-container','login-section','cookiesAnnounce','footer-wrapper','under-comments','bottom-widget-section','player-hover-menu','premium-n-overlay','pauseSpotContainer','xp-aftershot','lcplayer']) )
     sites.push(new SiteClass('xvideos', false, ['video-overlay','tabComments','thread-video-comments','thumb-ad','tabComments_bottom_page','video-ad','video-overlay-title','video-sponsor-links','tab-button','live-cams','head__menu-line__main-menu__lvl1 ignore-popunder','botLinks','remove-ads','report-search','slogan','red-ticket','nutaku-games','profileslist','nutaku','livecams','red-videos','premium-free-switch-premium','header-right','tooltip-menu','site-language','site-localisation','site-main-cat','ex-over-top ex-opened','video-title','ad-footer','header-mobile-right','video-right']) )
 
@@ -284,7 +287,7 @@ function debug (log, level = 0) {
         setTimeout(() => {
             hideAllSites(sites).catch(console.error);
             debug(`[tampermonkey] :: done`)
-        }, 800);
+        }, 500);
 
     }
 
