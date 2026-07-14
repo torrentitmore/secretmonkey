@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.03.14
+// @version      2026.07.14
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
