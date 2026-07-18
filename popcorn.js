@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.07.18.1
+// @version      2026.07.18.2
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -301,6 +301,14 @@ function debug (log, level = 0) {
             clearInterval(intervalId);
             debug(`[tampermonkey] :: done`)
         }, 5000);
+    }
+
+    if (AGGRESSION === 15) {
+        setTimeout(() => {
+            hideAllSites(sites).catch(console.error);
+            debug(`[tampermonkey] :: done`)
+        }, 5000);
+
     }
 
 })();
