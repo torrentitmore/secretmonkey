@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.07.14
+// @version      2026.07.18
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -24,6 +24,7 @@ var AGGRESSION = 13;
 const sites = [];
 
 function main (log, level = 0) {
+    sites.push(new SiteClass('porn4fans', false, ['mob-animated-banner-wrap','desc-animated-banner-wrap']) )
     sites.push(new SiteClass('domainxxx', false, []) )
     sites.push(new SiteClass('spankbang.com', false, ['all_comments','embed_box','Embed this porn video']) )
     sites.push(new SiteClass('babestube.com', false, ['commentView']) )
