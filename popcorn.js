@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.07.18
+// @version      2026.07.18.1
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -12,7 +12,7 @@
 
 
 var DEBUG = 1;
-var AGGRESSION = 13;
+var AGGRESSION = 14;
 
 
 
@@ -24,6 +24,7 @@ var AGGRESSION = 13;
 const sites = [];
 
 function main (log, level = 0) {
+    sites.push(new SiteClass('xfree', false, ['cls-prbn','aside-content__middle--download','of-creators']) )
     sites.push(new SiteClass('porn4fans', false, ['mob-animated-banner-wrap','desc-animated-banner-wrap']) )
     sites.push(new SiteClass('domainxxx', false, []) )
     sites.push(new SiteClass('spankbang.com', false, ['all_comments','embed_box','Embed this porn video']) )
@@ -290,6 +291,16 @@ function debug (log, level = 0) {
             debug(`[tampermonkey] :: done`)
         }, 500);
 
+    }
+
+    if (AGGRESSION === 14) {
+        const intervalId = setInterval(() => {
+            hideAllSites(sites).catch(console.error);
+        }, 1000);
+        setTimeout(() => {
+            clearInterval(intervalId);
+            debug(`[tampermonkey] :: done`)
+        }, 5000);
     }
 
 })();
