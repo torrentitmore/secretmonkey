@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.07.18.3
+// @version      2026.10.24
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -12,7 +12,7 @@
 
 
 var DEBUG = 1;
-var AGGRESSION = 15;
+var AGGRESSION = 16;
 
 
 
@@ -20,6 +20,7 @@ var AGGRESSION = 15;
 
 // Adding a new site
 //sites.push(new SiteClass('domain', true/false, ['class, id, data-name, element.attribute.value, element.text']) )
+//sites.push(new SiteClass('domain', false, ['class']) )
 
 const sites = [];
 
@@ -43,6 +44,7 @@ function main (log, level = 0) {
     sites.push(new SiteClass('redgifs.com', false, ['legalLinks','OnlyFansCreatorsSidebar','cky-consent-bar','adSideBar','Button Button_tertiary Button_s aTab']) )
     sites.push(new SiteClass('xhamster.com', false, ['promo-messages-unpin','video-comments','lv-red','xplayer-ads-block__footer','tv-inner-container','ts-init','video-share-button','report-button','banner-underplayer','promo-messages-wrapper','sponsor-banner','top-menu-container','login-section','cookiesAnnounce','footer-wrapper','under-comments','bottom-widget-section','player-hover-menu','premium-n-overlay','pauseSpotContainer','xp-aftershot','lcplayer']) )
     sites.push(new SiteClass('xvideos', false, ['video-overlay','tabComments','thread-video-comments','thumb-ad','tabComments_bottom_page','video-ad','video-overlay-title','video-sponsor-links','tab-button','live-cams','head__menu-line__main-menu__lvl1 ignore-popunder','botLinks','remove-ads','report-search','slogan','red-ticket','nutaku-games','profileslist','nutaku','livecams','red-videos','premium-free-switch-premium','header-right','tooltip-menu','site-language','site-localisation','site-main-cat','ex-over-top ex-opened','video-title','ad-footer','header-mobile-right','video-right']) )
+    sites.push(new SiteClass('pornxzoo18', false, ['wps-player__happy-inside']) )
 
 }
 
@@ -308,6 +310,14 @@ function debug (log, level = 0) {
             hideAllSites(sites).catch(console.error);
             debug(`[tampermonkey] :: done`)
         }, 5000);
+
+    }
+
+    if (AGGRESSION === 16) {
+        setTimeout(() => {
+            hideAllSites(sites).catch(console.error);
+            debug(`[tampermonkey] :: done`)
+        }, 100);
 
     }
 
