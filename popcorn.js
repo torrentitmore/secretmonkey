@@ -2,7 +2,7 @@
 // @name         secret bathroom time
 // @description  poof!
 // @namespace    http://tampermonkey.net/
-// @version      2026.10.24
+// @version      2026.10.26
 // @author       You
 // @match        https://*/*
 // @match        http://*/*
@@ -43,7 +43,7 @@ function main (log, level = 0) {
     sites.push(new SiteClass('pornlib.com', false, ['lc-block','aside_content','lcams2','spot_video_livecams2']) )
     sites.push(new SiteClass('redgifs.com', false, ['legalLinks','OnlyFansCreatorsSidebar','cky-consent-bar','adSideBar','Button Button_tertiary Button_s aTab']) )
     sites.push(new SiteClass('xhamster.com', false, ['promo-messages-unpin','video-comments','lv-red','xplayer-ads-block__footer','tv-inner-container','ts-init','video-share-button','report-button','banner-underplayer','promo-messages-wrapper','sponsor-banner','top-menu-container','login-section','cookiesAnnounce','footer-wrapper','under-comments','bottom-widget-section','player-hover-menu','premium-n-overlay','pauseSpotContainer','xp-aftershot','lcplayer']) )
-    sites.push(new SiteClass('xvideos', false, ['video-overlay','tabComments','thread-video-comments','thumb-ad','tabComments_bottom_page','video-ad','video-overlay-title','video-sponsor-links','tab-button','live-cams','head__menu-line__main-menu__lvl1 ignore-popunder','botLinks','remove-ads','report-search','slogan','red-ticket','nutaku-games','profileslist','nutaku','livecams','red-videos','premium-free-switch-premium','header-right','tooltip-menu','site-language','site-localisation','site-main-cat','ex-over-top ex-opened','video-title','ad-footer','header-mobile-right','video-right']) )
+    sites.push(new SiteClass('xvideos', true, ['video-overlay','tabComments','thread-video-comments','thumb-ad','tabComments_bottom_page','video-ad','video-overlay-title','video-sponsor-links','tab-button','live-cams','head__menu-line__main-menu__lvl1 ignore-popunder','botLinks','remove-ads','report-search','slogan','red-ticket','nutaku-games','profileslist','nutaku','livecams','red-videos','premium-free-switch-premium','header-right','tooltip-menu','site-language','site-localisation','site-main-cat','ex-over-top ex-opened','video-title','ad-footer','header-mobile-right','video-right']) )
     sites.push(new SiteClass('pornxzoo18', false, ['wps-player__happy-inside']) )
 
 }
